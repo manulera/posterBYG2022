@@ -1,28 +1,38 @@
 
 <div class="box full">
 
-# 😥 The problem 😥
+# 🦠 What about strains? 🦠
 
 <div class="content">
 
-We can describe sequence features in open formats (such as `.gb`), but not cloning strategies.
+## 🧬 Describing a genotype
 
-Let's imagine a typical strategy to clone a gene into a plasmid:
+The genotype of a strain is a **list of the alleles that differ from the wild-type or reference strain**. If we can describe an allele, we can describe a **genotype as an array of alleles**.
+
+## 🤔 What's an allele then?
+
+Since ShareYourCloning gives us a standard format to describe cloning strategies, we can describe an **allele as a sequence that originated from a fragment the reference genome sequence**.
+* We store the genome coordinates of the template sequence used as input.
+* We store the product sequence, and cloning strategy.
+
+For example:
 
 <div class="img-wrapper">
-    <img width="90%" src="cloning_strategy.svg" alt="">
+    <img width="80%" src="graph1.svg" alt="">
 </div>
 
-1. Amplify the DNA from the organism using PCR with oligonucleotides that contain 5' extensions.
-2. Digest the plasmid and PCR product with digestion enzymes.
-3. Ligate the digested products.
+## 🦠 How do you define a strain source?
 
-<!-- 🤔 Well, there must be an Open Standard to encode this since this is routinely done in **hundreds of laboratories**.
-
-<div class="alert alert-danger text-center mx-auto" role="alert" style="width:fit-content"><strong>🚨Spoiler alert🚨</strong><br>That is not the case</div> -->
+1. Strain sources that generate new alleles have an associated "Allele Source".
 
 <div class="img-wrapper">
-    <img width="60%" src="meme.svg" alt="">
+    <img width="80%" src="graph2.svg" alt="">
+</div>
+
+2. Mating is just a shuffling of existing alleles
+
+<div class="img-wrapper">
+    <img width="70%" src="genealogies.svg" alt="">
 </div>
 
 </div>
@@ -30,75 +40,45 @@ Let's imagine a typical strategy to clone a gene into a plasmid:
 
 <div class="box full">
 
-# 🤔 The solution? 🤔
+# 🔮 Planned features 🔮
 
-<div class="content">
+<div class="content big-list">
+A web application with a database storing these entities and their relationships, where you can:
 
-In ShareYourCloning, we use `json` to document two types of sequence sources:
-
-## 1. Sequence is newly generated
-
-<div class="mermaid">
-graph LR;
-    A[<code>Sequence<hr>id: 1</code>]-->C["<code>Source<hr>id: 3<br>input: [1,2]<br>output: 4<br>experiment_specific_stuff<br>...</code>"];
-    B[<code>Sequence<hr>id: 2</code>]-->C;
-    C-->D[<code>Sequence<hr>id: 4</code>];
-</div>
-
-## 2. Sequence in collection / naturally occurring
-
-<div class="mermaid">
-graph LR;
-    B["<code>Source<hr>id: 1<br>input: []<br>output: 2<br>request_to_your<br>favourite_database</code>"]-->A[<code>Sequence<hr>id: 2</code>];
-    C["<code>Source<hr>id: 1<br>input: []<br>output: 2<br>a_file</code>"]-->D[<code>Sequence<hr>id: 2</code>];
-</div>
-
-Enter 🔥🔥 **ShareYourCloning** 🔥🔥, a web application where you can simulate your cloning strategy and export it in this format to share with others or for publication.</div>
-
-<div class="img-wrapper">
-    <img width="80%" src="architecture2.svg" alt="">
-</div>
-
-
+* 🔍 **Browse and query your collection** 🔍
+  * Ancestry and progeny of all resources.
+  * Rich queries:
+    * Alleles of a certain gene
+    * Plasmids with a given marker)
+* 📎 **Attach supporting evidence** 📎
+  * Gel images
+  * Sequencing data that is automatically aligned with expected sequence.
+* ♻️ **Standardisation from planning stage**♻️
+  * Planned resources selectable for further manipulations without being part of the main collection.
+  * Links to knowledgebases.
+* 🪱🐀 **Multiple strain backgrounds & species** 🦒🐉
+* 📓⚙️ **Integration with ELNs and other tools** ⚙️📓
+* 📜📩**One Click Export/Report/Share/Publish**📩📜
+  * Generate "Materials and Methods" text and files.
+  * Generate publisher-specific tables (e.g., STAR).
+  * Submit to repositories and generate unique IDs.
+* 💰**Rich sequence features**💰
+  * Combined with provenance:
+    * Genetic meaning of alleles.
+    * Automatic naming of alleles.
 
 </div>
 </div>
 
 <div class="box full">
 
-# 🙋 Try it yourself! 🙋‍♂️
+# 🙋 Get involved! 🙋‍♀️
 
 <div class="content centered">
 
-<a href="https://shareyourcloning.netlify.app/">https://shareyourcloning.netlify.app/</a>
+<span style="font-size: 1.3em">Visit</span> <a href="https://www.genestorian.org">https://www.genestorian.org<a>
 
-<div class="img-wrapper">
-    <img width="25%" src="qr_app.png" alt="">
-</div>
-
-<div class="img-wrapper">
-    <img width="100%" src="app_screenshot.png" alt="">
-</div>
-
-
-
-</div>
-</div>
-
-<div class="box full">
-
-# <i class="fab fa-github"></i> 🛠️ Get involved! 🛠️ <i class="fab fa-github"></i>
-
-<div class="content centered">
-<a href="https://github.com/manulera/ShareYourCloning/">https://github.com/manulera/ShareYourCloning/</a>
-<div class="img-wrapper">
-
-|Frontend repo|Backend repo|Contributing.md|
-|--|--|--|
-|<img width="75%" src="qr_frontend_repository.png" alt="">|<img width="75%" src="qr_backend_repository.png" alt="">|<img width="75%" src="qr_contribution.png" alt="">|
-
-<span></span>
-</div>
+<h2 style='text-align: center; margin-bottom: 180%'> 📃 Paste your ideas here 📃 </h2>
 
 </div>
 </div>

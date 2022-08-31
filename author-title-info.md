@@ -1,4 +1,4 @@
-# ShareYourCloning: First steps towards a FAIR standard for cloning strategies
+# Genestorian: a web application for strain and plasmid collections
 
 Manuel Lera-Ramirez<sup>1</sup>,  Jürg Bähler<sup>1</sup>, Valerie Wood<sup>2</sup>
 
